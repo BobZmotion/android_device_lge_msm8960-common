@@ -24,7 +24,7 @@
 # variant, so that it gets overwritten by the parent (which goes
 # against the traditional rules of inheritance).
 
-COMMON_GLOBAL_CFLAGS += -DLGE_MSM8960
+COMMON_GLOBAL_CFLAGS += -DLGE_MSM8960 -DNEED_UMS_ENABLE -DENABLE_UMS_WITH_DATAMEDIA
 
 # Include path
 TARGET_SPECIFIC_HEADER_PATH := device/lge/msm8960-common/include
@@ -74,6 +74,9 @@ TARGET_USES_ION_AUDIO := true
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
 TARGET_CUSTOM_BLUEDROID := ../../../device/lge/msm8960-common/bluetooth/bluetooth.c
+
+# NFC
+BOARD_HAVE_NFC := true
 
 # Graphics
 COMMON_GLOBAL_CFLAGS += -DQCOM_NO_SECURE_PLAYBACK -DQCOM_ROTATOR_KERNEL_FORMATS

@@ -88,8 +88,6 @@ PRODUCT_PACKAGES += \
     libQcomUI \
     libtilerenderer
 
-# NFC
-
 # Commands to migrate prefs from com.android.nfc3 to com.android.nfc
 PRODUCT_COPY_FILES += $(call add-to-product-copy-files-if-exists,\
 packages/apps/Nfc/migrate_nfc.txt:system/etc/updatecmds/migrate_nfc.txt)
@@ -105,6 +103,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/lge/msm8960-common/configs/nfcee_access.xml:system/etc/nfcee_access.xml
 
+# NFC
 PRODUCT_PACKAGES += \
     nfc.msm8960 \
     libnfc \
@@ -146,6 +145,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     make_ext4fs \
     setup_fs
+
+# Build sim toolkit
+PRODUCT_PACKAGES += \
+    Stk
 
 # MSM8960 firmware
 PRODUCT_COPY_FILES += \

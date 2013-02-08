@@ -173,6 +173,11 @@ PRODUCT_COPY_FILES += \
     device/lge/msm8960-common/prebuilt/libOmxVdec.so:/obj/lib/libOmxVdec.so \
     device/lge/msm8960-common/prebuilt/libOmxVdec.so:/system/lib/libOmxVdec.so
 
+# We have enough storage space to hold precise GC data
+PRODUCT_TAGS += dalvik.gc.type-precise
+
+PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
+
 # call the proprietary setup
 $(call inherit-product-if-exists, vendor/lge/MS770/MS770-vendor.mk)
 
